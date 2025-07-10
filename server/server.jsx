@@ -16,6 +16,8 @@ const PORT = process.env.PORT || 3000;
 // Crée une application express
 const app = express();
 
+const task = ["1. ranger la table", "2. faire la vaiselle"]
+
 // Définit une route pour la racine du serveur (http://localhost:PORT/)
 app.get("/", (req, res) => {
   // Lit le contenu du fichier "index.html" dans le dossier "public" en utilisant l'encodage "utf8" (utilisé comme un modèle de réponse)
@@ -29,7 +31,7 @@ app.get("/", (req, res) => {
     return res.send(
       data.replace(
         '<div id="root"></div>',
-        `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`
+        `<div id="root">${ReactDOMServer.renderToString(<App tasks={task} />)}</div>`
       )
     );
   });

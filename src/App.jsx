@@ -1,41 +1,45 @@
-// import { useState } from 'react'
-// import './App.css'
+
+import React from "react";
+import { useState } from 'react'
+import './App.css'
 
 
-// export default function App() {
+function App({ tasks }) {
 
-//   const task = ["ranger la table", "faire la vaiselle"]
-
-//   return (
-//     <div>
-//       <h1>Liste de tâches</h1>
-//       <ul>
-//         {task.map((task) => (
-//           <li key={task.id}>
-//             {task}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-import React from "react"; // Utile pour le build
-
-
-function App() {
-  // Utilise le hook d'état "useState" de React pour définir une variable d'état "times" initialisée à 0 et une fonction "setTimes" pour la mettre à jour
-  const [times, setTimes] = React.useState(0);
-
-  // Rendu du composant
   return (
     <div>
-      {/* Affiche un titre avec le contenu "Hello" suivi de la valeur actuelle de la variable d'état "times" */}
-      <h1>Hello {times}</h1>
-      {/* Affiche un bouton qui, lorsqu'il est cliqué, appelle la fonction "setTimes" avec une fonction de mise à jour pour incrémenter la valeur de "times" de 1 */}
-      <button onClick={() => setTimes((times) => times + 1)}>ADD</button>
+      <h1>Liste de tâches</h1>
+      <ul>
+        {tasks.map((task, index) => (
+          <li key={index}>
+            {task}
+          </li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
+
 export default App
+
+// import React from "react"; // Utile pour le build
+
+
+// function App() {
+
+  
+//   const [times, setTimes] = React.useState(0);
+
+//   // Rendu du composant
+//   return (
+//     <div>
+
+//       <h1>Liste de tache {times}</h1>
+     
+//       <button onClick={() => setTimes((times) => times + 1)}>ADD</button>
+//     </div>
+//   )
+// }
+
+// export default App

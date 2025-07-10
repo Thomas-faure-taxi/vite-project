@@ -2,7 +2,6 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "_comment1": "Compile le code client en utilisant esbuild, en entrée src/index.js, en sortie dist/bundle.js, et en spécifiant que les fichiers .js sont des fichiers jsx",
     "build:client": "esbuild src/main.jsx --bundle --outfile=dist/bundle.js --loader:.js=jsx",
